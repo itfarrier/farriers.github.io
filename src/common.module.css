@@ -1,0 +1,55 @@
+@import url('~normalize.css');
+
+:root {
+  --black: #0f0f0f;
+  --white: #f0f0f0;
+  --transition: all 0.5s ease-in-out;
+}
+
+:root[theme='dark'] {
+  --black: #f0f0f0;
+  --white: #0f0f0f;
+  transition: var(--transition);
+}
+
+html {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--black);
+  font-family: serif;
+  font-kerning: auto;
+  font-size: 2rem;
+  line-height: 1.25;
+  text-align: center;
+  transition: var(--transition);
+}
+
+::selection {
+  background: var(--black);
+  color: var(--white);
+  transition: var(--transition);
+}
+
+a {
+  color: var(--black);
+  transition: var(--transition);
+}
+
+a:active,
+a:link,
+a:visited {
+  border-bottom: 1px dotted var(--black);
+  color: var(--black);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--black);
+}

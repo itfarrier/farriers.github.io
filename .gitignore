@@ -1,0 +1,10 @@
+/.cache/
+/.idea/
+/.vscode/
+/coverage/
+/dist/
+/node_modules/
+/public/
+
+.DS_Store
+yarn-error.log

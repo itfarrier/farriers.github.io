@@ -1,0 +1,5 @@
+@import '../common.module.css';
+
+.header {
+  font-family: sans-serif;
+}

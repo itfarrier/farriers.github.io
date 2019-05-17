@@ -1,0 +1,80 @@
+{
+  "contributors": [
+    {
+      "email": "dmitrij@podabed.org",
+      "name": "Dmitrij Podabed",
+      "url": "https://podabed.org"
+    }
+  ],
+  "dependencies": {
+    "gatsby": "^2.5.0",
+    "gatsby-image": "^2.0.41",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.0",
+    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-react-axe": "^0.2.2",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-plugin-typescript": "^2.0.13",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-source-filesystem": "^2.0.35",
+    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "intl": "^1.2.5",
+    "ptz-i18n": "^1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-intl": "^2.9.0"
+  },
+  "description": "Personal site",
+  "devDependencies": {
+    "@types/graphql": "^14.2.0",
+    "@types/intl": "^1.2.0",
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-intl": "^2.3.17",
+    "css-declaration-sorter": "^4.0.1",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "eslint": "^5.16.0",
+    "gh-pages": "^2.0.1",
+    "lodash": "^4.17.11",
+    "normalize.css": "^8.0.1",
+    "postcss-preset-env": "^6.6.0",
+    "prettier": "^1.17.1",
+    "stylelint": "^10.0.1",
+    "stylelint-config-idiomatic-order": "^7.0.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-a11y": "^1.0.0",
+    "typescript": "^3.4.5"
+  },
+  "keywords": [
+    "farriers",
+    "horses",
+    "horseshoeing",
+    "trimming"
+  ],
+  "license": "GPL-3.0",
+  "main": "./src/components/Layout",
+  "name": "farriers.ru",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/podabed/farriers.github.io.git"
+  },
+  "scripts": {
+    "build": "gatsby build --verbose",
+    "clean": "rm -rf ./.cache/* && rm -rf ./public/*",
+    "deploy": "yarn run clean && git push origin source && yarn run build && cp CNAME public/ && gh-pages -b master -d public",
+    "deployTest": "yarn run clean && git push test && yarn run build && cp CNAME-TEST public/CNAME && gh-pages -b master -d public -o test",
+    "start": "yarn run clean && gatsby develop --verbose",
+    "startProd": "yarn run clean && yarn run build && gatsby serve --verbose"
+  },
+  "version": "2.0.0"
+}
