@@ -1,14 +1,14 @@
 import { navigate } from 'gatsby';
 import * as React from 'react';
 
-import { ILangObject } from '../../interfaces';
+import { ILangObject } from '../Layout/interfaces';
 
-const SelectLanguage: React.FC = (props: any): React.ReactElement => {
+const SelectLanguage: (props: any) => React.ReactElement = (props) => {
   const { langsMenu, toggleLanguage } = props;
 
   const links: React.ReactElement[] = langsMenu.map(
     (lang: ILangObject): React.ReactElement => {
-      const onClick: () => void = (): void => {
+      const onClick: () => void = () => {
         toggleLanguage(lang.langKey);
         navigate(lang.link);
       };

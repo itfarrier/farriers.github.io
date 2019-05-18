@@ -1,4 +1,4 @@
-export interface IData {
+interface IData {
   allFile: { edges: Array<{ node: { childImageSharp: IChildImageSharp; id: string } }> };
   allMarkdownRemark: {
     edges: Array<{
@@ -9,7 +9,7 @@ export interface IData {
   site: { siteMetadata: { title: string } };
 }
 
-export interface IPage {
+interface IPage {
   children: object;
   data: IData;
   pageContext?: {
@@ -18,14 +18,14 @@ export interface IPage {
   };
 }
 
-export interface INextPrevious {
+interface INextPrevious {
   fields: {
     slug: string;
   };
   frontmatter: IFrontmatter;
 }
 
-export interface IMarkdownRemark {
+interface IMarkdownRemark {
   excerpt: string;
   fields: {
     slug: string;
@@ -34,16 +34,16 @@ export interface IMarkdownRemark {
   html: string;
 }
 
-export interface IChildImageSharp {
+interface IChildImageSharp {
   fluid: object;
   id: string;
 }
-export interface IFrontmatter {
+interface IFrontmatter {
   date: string;
   title: string;
 }
 
-export interface ICSSModule {
+interface ICSSModule {
   [className: string]: string;
 }
 
@@ -52,8 +52,22 @@ declare module '*.css' {
   export = classNames;
 }
 
-export interface ILangObject {
-  langKey: string;
-  link: string;
-  selected: boolean;
+interface IHTML {
+  htmlAttributes: object;
+  headComponents: any[];
+  bodyAttributes: object;
+  preBodyComponents: any[];
+  body: string;
+  postBodyComponents: any[];
 }
+
+export {
+  ICSSModule,
+  IChildImageSharp,
+  IData,
+  IFrontmatter,
+  IHTML,
+  IMarkdownRemark,
+  INextPrevious,
+  IPage,
+};

@@ -1,5 +1,1 @@
-@import '../common.module.css';
-
-.header {
-  font-family: sans-serif;
-}
+@import url('../common.css');

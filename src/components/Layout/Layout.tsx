@@ -8,16 +8,19 @@ import { addLocaleData, IntlProvider } from 'react-intl';
 import * as en from 'react-intl/locale-data/en';
 import * as ru from 'react-intl/locale-data/ru';
 
-import { ILangObject } from '../../interfaces';
-import Context from '../Context';
-import Header from '../Header';
+import Context from '../Context/Context';
+import Footer from '../Footer';
 import Head from '../Head';
+import Header from '../Header';
+import Main from '../Main';
+import { ILangObject } from './interfaces';
 
 addLocaleData([...en, ...ru]);
 
 const Layout: React.FC = (props: any): React.ReactElement => {
   const {
     children,
+    location,
     location: { pathname },
   } = props;
 
@@ -51,15 +54,10 @@ const Layout: React.FC = (props: any): React.ReactElement => {
       <Context.Consumer>
         {(context) => (
           <>
-            <Head context={context} i18nMessages={i18nMessages} {...props} />
-            <Header
-              context={context}
-              homeLink={homeLink}
-              langsMenu={langsMenu}
-              locale={langKey}
-              pathname={pathname}
-            />
-            <main>{children}</main>
+            <Head context={context} i18nMessages={i18nMessages} location={location} />
+            <Header context={context} langsMenu={langsMenu} />
+            <Main children={children} />
+            <Footer />
           </>
         )}
       </Context.Consumer>

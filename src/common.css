@@ -12,29 +12,18 @@
   transition: var(--transition);
 }
 
-html {
-  display: flex;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
+html,
+body,
+#___gatsby > *,
+div[role='group'][tabindex] {
   background: var(--white);
   color: var(--black);
-  font-family: serif;
-  font-kerning: auto;
-  font-size: 2rem;
-  line-height: 1.25;
-  text-align: center;
   transition: var(--transition);
 }
 
 ::selection {
   background: var(--black);
   color: var(--white);
-  transition: var(--transition);
 }
 
 a {

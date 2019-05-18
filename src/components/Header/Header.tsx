@@ -1,13 +1,12 @@
-import { Link } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
 import SelectLanguage from '../SelectLanguage';
+import { IProps } from './interfaces';
 
-const Header: React.FC = (props: any): React.ReactElement => {
+const Header: (props: IProps) => React.ReactElement = (props) => {
   const {
-    context: { isDark, language, toggleDark, toggleLanguage },
-    homeLink,
+    context: { isDark, toggleDark, toggleLanguage },
     langsMenu,
   } = props;
 
@@ -18,7 +17,7 @@ const Header: React.FC = (props: any): React.ReactElement => {
       <Helmet htmlAttributes={{ theme }} />
       <nav>
         <button onClick={toggleDark}>{theme}</button>
-        <SelectLanguage langsMenu={langsMenu} language={language} toggleLanguage={toggleLanguage} />
+        <SelectLanguage langsMenu={langsMenu} toggleLanguage={toggleLanguage} />
       </nav>
     </header>
   );

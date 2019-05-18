@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-const Head: React.FC = (props: any): React.ReactElement => {
+const Head: (props: any) => React.ReactElement = (props) => {
   const {
     context: { language },
     i18nMessages: { description, keywords, title },

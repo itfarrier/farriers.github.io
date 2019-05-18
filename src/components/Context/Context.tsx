@@ -1,36 +1,34 @@
 import * as React from 'react';
 
-import '../common.module.css';
-
-interface IContextInitialState {
-  isDark: boolean;
-  language: string;
-  toggleDark(): void;
-}
+import { defaultLangKey } from '../../data/languages';
+import { IContextInitialState } from './interfaces';
 
 const initialState: IContextInitialState = {
   isDark: false,
   language: 'en',
   // tslint:disable-next-line: no-empty
   toggleDark: () => {},
+  // tslint:disable-next-line: no-empty
+  toggleLanguage: () => {},
 };
 
 const Context: React.Context<IContextInitialState> = React.createContext<IContextInitialState>(
   initialState,
 );
 
-export class ContextProvider extends React.PureComponent<any, IContextInitialState> {
+class ContextProvider extends React.PureComponent<any, IContextInitialState> {
   constructor(props: any) {
     super(props);
 
     this.state = {
       isDark: false,
-      language: 'en',
+      language: defaultLangKey,
       toggleDark: this.toggleDark,
+      toggleLanguage: this.toggleLanguage,
     };
   }
 
-  public componentDidMount = () => {
+  public componentDidMount() {
     const { isDark, language } = this.state;
 
     const isDarkFromLocalStorage: boolean = JSON.parse(localStorage.getItem('isDark'));
@@ -47,9 +45,9 @@ export class ContextProvider extends React.PureComponent<any, IContextInitialSta
       this.setState({ isDark: true });
       localStorage.setItem('isDark', JSON.stringify(isDark));
     }
-  };
+  }
 
-  public render: () => React.ReactElement = (): React.ReactElement => {
+  public render() {
     const { children } = this.props;
     const { isDark, language } = this.state;
 
@@ -65,22 +63,23 @@ export class ContextProvider extends React.PureComponent<any, IContextInitialSta
         {children}
       </Context.Provider>
     );
-  };
+  }
 
-  public toggleDark: () => void = (): void => {
+  public toggleDark: IContextInitialState['toggleDark'] = (): void => {
     const isDark = !this.state.isDark;
 
     localStorage.setItem('isDark', JSON.stringify(isDark));
     this.setState({ isDark });
   };
 
-  public toggleLanguage: (language: string) => void = (language: string) => {
+  public toggleLanguage: IContextInitialState['toggleLanguage'] = (language) => {
     localStorage.setItem('language', JSON.stringify(language));
     this.setState({ language });
   };
 
-  private isSupportsDarkModeInMacOS: () => boolean = (): boolean =>
+  private isSupportsDarkModeInMacOS: () => boolean = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 }
 
 export default Context;
+export { ContextProvider };
