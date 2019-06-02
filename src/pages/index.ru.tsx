@@ -7,7 +7,7 @@ const Index: React.FC = (props) => (
   <Layout location={props.location}>
     <article>
       <header>
-        <h1>РАСЧИСТКА И КОВКА ЛОШАДЕЙ</h1>
+        <h1 className={styles.header}>РАСЧИСТКА И КОВКА ЛОШАДЕЙ</h1>
       </header>
       <section>
         <a href={'tel:+79333330477'}>+7&nbsp;(933)&nbsp;333&#x2012;04&#x2012;77</a>,&#x20;
