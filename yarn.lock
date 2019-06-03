@@ -733,7 +733,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
@@ -1962,6 +1962,13 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
+
+browser-lang@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/browser-lang/-/browser-lang-0.0.1.tgz#9cccc756a562fb7f271b87d3b2740f468c4d9b92"
+  integrity sha512-ozdbsXd3q/7gUb98LzM80Y1Y/GRzy9GMucBdT92KRoWLjICxCpJU7RJgqFm+dRXWW8hxTGgnLfb9M4QSrcq5gw==
+  dependencies:
+    lodash "^4.17.10"
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -4946,6 +4953,16 @@ gatsby-plugin-i18n@^1.0.1:
     folktale "^2.0.1"
     graphql "^0.11.7"
     ptz-i18n "^1.0.0"
+
+gatsby-plugin-intl@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-intl/-/gatsby-plugin-intl-0.1.7.tgz#8a685bac5444e6a8208de8ad58aa72e64306b331"
+  integrity sha512-CiErE6R+wvrS1RUYLP01SLq4xfuGnRFZydU22GXCC/YpC2JdIyu9bQElF1Cf1Ql753w4luXDY+Hma2TBaYGj9A==
+  dependencies:
+    "@babel/runtime" "^7.4.3"
+    browser-lang "^0.0.1"
+    intl "^1.2.5"
+    react-intl "^2.8.0"
 
 gatsby-plugin-manifest@^2.1.1:
   version "2.1.1"
@@ -10198,7 +10215,7 @@ react-hot-loader@^4.8.4:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-intl@^2.9.0:
+react-intl@^2.8.0, react-intl@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.9.0.tgz#c97c5d17d4718f1575fdbd5a769f96018a3b1843"
   integrity sha512-27jnDlb/d2A7mSJwrbOBnUgD+rPep+abmoJE511Tf8BnoONIAUehy/U1zZCHGO17mnOwMWxqN4qC0nW11cD6rA==
