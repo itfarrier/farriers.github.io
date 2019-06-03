@@ -1,10 +1,11 @@
+import { injectIntl } from 'gatsby-plugin-intl';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
 const Head: (props: any) => React.ReactElement = (props) => {
   const {
     context: { language },
-    i18nMessages: { description, keywords, title },
+    intl: { horseshoeingAndTrimming, keywords, title },
     location: { href },
   } = props;
 
@@ -95,9 +96,9 @@ const Head: (props: any) => React.ReactElement = (props) => {
       <meta content={'yes'} name={'apple-mobile-web-app-capable'} />
       <meta content={href} name={'twitter:url'} />
       <meta content={href} property={'og:url'} />
-      <meta content={description} name={'description'} />
-      <meta content={description} name={'twitter:description'} />
-      <meta content={description} property={'og:description'} />
+      <meta content={horseshoeingAndTrimming} name={'description'} />
+      <meta content={horseshoeingAndTrimming} name={'twitter:description'} />
+      <meta content={horseshoeingAndTrimming} property={'og:description'} />
       <meta content={keywords} name={'keywords'} />
       <meta content={title} name={'apple-mobile-web-app-title'} />
       <meta content={title} name={'application-name'} />
@@ -113,4 +114,4 @@ const Head: (props: any) => React.ReactElement = (props) => {
   );
 };
 
-export default Head;
+export default injectIntl(Head);

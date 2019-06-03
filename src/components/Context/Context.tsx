@@ -1,11 +1,12 @@
+import { changeLocale, IntlProvider } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
-import { defaultLangKey } from '../../data/languages';
+import siteMetadata from '../../data/siteMetadata';
 import { IContextInitialState } from './interfaces';
 
 const initialState: IContextInitialState = {
   isDark: false,
-  language: 'en',
+  language: siteMetadata.defaultLanguage,
   // tslint:disable-next-line: no-empty
   toggleDark: () => {},
   // tslint:disable-next-line: no-empty
@@ -22,7 +23,7 @@ class ContextProvider extends React.PureComponent<any, IContextInitialState> {
 
     this.state = {
       isDark: false,
-      language: defaultLangKey,
+      language: siteMetadata.defaultLanguage,
       toggleDark: this.toggleDark,
       toggleLanguage: this.toggleLanguage,
     };
@@ -51,17 +52,21 @@ class ContextProvider extends React.PureComponent<any, IContextInitialState> {
     const { children } = this.props;
     const { isDark, language } = this.state;
 
+    console.log(this.props);
+
     return (
-      <Context.Provider
-        value={{
-          isDark,
-          language,
-          toggleDark: this.toggleDark,
-          toggleLanguage: this.toggleLanguage,
-        }}
-      >
-        {children}
-      </Context.Provider>
+      <IntlProvider locale={navigator.language}>
+        <Context.Provider
+          value={{
+            isDark,
+            language,
+            toggleDark: this.toggleDark,
+            toggleLanguage: this.toggleLanguage,
+          }}
+        >
+          {children}
+        </Context.Provider>
+      </IntlProvider>
     );
   }
 

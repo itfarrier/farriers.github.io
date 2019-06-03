@@ -1,7 +1,6 @@
 const siteMetadata = require('./src/data/siteMetadata');
 
 module.exports = {
-  siteMetadata,
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-axe',
@@ -203,9 +202,8 @@ module.exports = {
             type: 'image/svg+xml',
           },
         ],
-
-        name: 'podabed.org',
-        short_name: 'podabed',
+        name: siteMetadata.title,
+        short_name: siteMetadata.shortTitle,
         start_url: '/',
         theme_color: '#fff',
       },
@@ -214,22 +212,14 @@ module.exports = {
     'gatsby-plugin-typescript',
     {
       options: {
-        langKeyDefault: siteMetadata.languages.defaultLangKey,
-        langKeyForNull: siteMetadata.languages.defaultLangKey,
-        prefixDefault: true,
-        useLangKeyLayout: false,
-      },
-      resolve: 'gatsby-plugin-i18n',
-    },
-    {
-      options: {
-        defaultLanguage: 'ru',
-        languages: ['en', 'ru'],
+        defaultLanguage: siteMetadata.defaultLanguage,
+        languages: siteMetadata.languages,
         // eslint-disable-next-line no-undef
-        path: `${__dirname}/src/i18n`,
+        path: `${__dirname}/src/data/i18n`,
         redirect: true,
       },
       resolve: 'gatsby-plugin-intl',
     },
   ],
+  siteMetadata,
 };

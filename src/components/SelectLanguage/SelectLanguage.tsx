@@ -1,27 +1,34 @@
 import { navigate } from 'gatsby';
+import { changeLocale, IntlContextConsumer } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
 import { ILangObject } from '../Layout/interfaces';
 
 const SelectLanguage: (props: any) => React.ReactElement = (props) => {
-  const { langsMenu, toggleLanguage } = props;
+  const languageName = {
+    en: 'English',
+    ru: 'Russian',
+  };
 
-  const links: React.ReactElement[] = langsMenu.map(
-    (lang: ILangObject): React.ReactElement => {
-      const onClick: () => void = () => {
-        toggleLanguage(lang.langKey);
-        navigate(lang.link);
-      };
+  return (
+    <IntlContextConsumer>
+      {(context): React.ReactElement[] => {
+        const { languages, language: currentLocale } = context;
 
-      return (
-        <button key={lang.langKey} onClick={onClick}>
-          {lang.langKey}
-        </button>
-      );
-    },
+        return languages.map((language: string) => {
+          const onClick = (): void => {
+            return changeLocale(language);
+          };
+
+          return (
+            <button key={language} onClick={onClick}>
+              {languageName[language]}
+            </button>
+          );
+        });
+      }}
+    </IntlContextConsumer>
   );
-
-  return <>{links}</>;
 };
 
 export default SelectLanguage;

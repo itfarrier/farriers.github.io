@@ -1,6 +1,6 @@
-const languages = require('./languages');
-
 module.exports = {
-  languages,
+  defaultLanguage: 'ru',
+  languages: ['en', 'ru'],
+  shortTitle: 'farriers',
   title: 'farriers.ru',
 };
