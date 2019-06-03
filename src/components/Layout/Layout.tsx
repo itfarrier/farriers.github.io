@@ -49,8 +49,6 @@ const Layout: React.FC = (props: any): React.ReactElement => {
   const langsMenu: ILangObject[] = getLangs(langs, langKey, getUrlForLang(homeLink, pathname));
   const i18nMessages: { [key: string]: string } = require(`../../data/messages/${langKey}`);
 
-  console.log(props);
-
   return (
     <IntlProvider locale={navigator.language} messages={i18nMessages}>
       <Context.Consumer>
