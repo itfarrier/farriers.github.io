@@ -221,5 +221,15 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-i18n',
     },
+    {
+      options: {
+        defaultLanguage: 'ru',
+        languages: ['en', 'ru'],
+        // eslint-disable-next-line no-undef
+        path: `${__dirname}/src/i18n`,
+        redirect: true,
+      },
+      resolve: 'gatsby-plugin-intl',
+    },
   ],
 };
