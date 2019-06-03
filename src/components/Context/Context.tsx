@@ -52,8 +52,6 @@ class ContextProvider extends React.PureComponent<any, IContextInitialState> {
     const { children } = this.props;
     const { isDark, language } = this.state;
 
-    console.log(this.props);
-
     return (
       <IntlProvider locale={navigator.language}>
         <Context.Provider
