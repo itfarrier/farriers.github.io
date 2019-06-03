@@ -1,7 +1,7 @@
-import { changeLocale, IntlContextConsumer } from 'gatsby-plugin-intl';
+import { IntlContextConsumer } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
-const SelectLanguage: (props: any) => React.ReactElement = (props) => {
+const SelectLanguage = (props: any): React.ReactElement => {
   return (
     <IntlContextConsumer>
       {(context: any): React.ReactElement[] => {
@@ -10,7 +10,7 @@ const SelectLanguage: (props: any) => React.ReactElement = (props) => {
         return languages.map(
           (language: string): React.ReactElement => {
             const onClick = (): void => {
-              return changeLocale(language);
+              return props.toggleLanguage(language);
             };
 
             return (

@@ -7,7 +7,6 @@ import { IProps } from './interfaces';
 const Header: (props: IProps) => React.ReactElement = (props) => {
   const {
     context: { isDark, toggleDark, toggleLanguage },
-    langsMenu,
   } = props;
 
   const theme = isDark ? 'dark' : 'light';
@@ -17,7 +16,7 @@ const Header: (props: IProps) => React.ReactElement = (props) => {
       <Helmet htmlAttributes={{ theme }} />
       <nav>
         <button onClick={toggleDark}>{theme}</button>
-        <SelectLanguage langsMenu={langsMenu} toggleLanguage={toggleLanguage} />
+        <SelectLanguage toggleLanguage={toggleLanguage} />
       </nav>
     </header>
   );

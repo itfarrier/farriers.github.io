@@ -78,6 +78,7 @@ class ContextProvider extends React.PureComponent<any, IContextInitialState> {
   public toggleLanguage: IContextInitialState['toggleLanguage'] = (language) => {
     localStorage.setItem('language', JSON.stringify(language));
     this.setState({ language });
+    changeLocale(language);
   };
 
   private isSupportsDarkModeInMacOS: () => boolean = () =>

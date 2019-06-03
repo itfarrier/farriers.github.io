@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 const Head: (props: any) => React.ReactElement = (props) => {
   const {
     context: { language },
-    intl: { horseshoeingAndTrimming, keywords, title },
+    intl: { formatMessage },
     location: { href },
   } = props;
 
@@ -55,11 +55,6 @@ const Head: (props: any) => React.ReactElement = (props) => {
       ),
     );
   };
-  // const variantOfPageTitle: string = subPage
-  //   ? `${title} — ${description} — ${page} — ${subPage}`
-  //   : page
-  //   ? `${title} — ${description} — ${page}`
-  //   : `${title} — ${description}`;
 
   return (
     <Helmet>
@@ -96,17 +91,23 @@ const Head: (props: any) => React.ReactElement = (props) => {
       <meta content={'yes'} name={'apple-mobile-web-app-capable'} />
       <meta content={href} name={'twitter:url'} />
       <meta content={href} property={'og:url'} />
-      <meta content={horseshoeingAndTrimming} name={'description'} />
-      <meta content={horseshoeingAndTrimming} name={'twitter:description'} />
-      <meta content={horseshoeingAndTrimming} property={'og:description'} />
-      <meta content={keywords} name={'keywords'} />
-      <meta content={title} name={'apple-mobile-web-app-title'} />
-      <meta content={title} name={'application-name'} />
-      <meta content={title} name={'twitter:title'} />
-      <meta content={title} property={'og:site_name'} />
-      <meta content={title} property={'og:title'} />
+      <meta content={formatMessage({ id: 'horseshoeingAndTrimming' })} name={'description'} />
+      <meta
+        content={formatMessage({ id: 'horseshoeingAndTrimming' })}
+        name={'twitter:description'}
+      />
+      <meta
+        content={formatMessage({ id: 'horseshoeingAndTrimming' })}
+        property={'og:description'}
+      />
+      <meta content={formatMessage({ id: 'keywords' })} name={'keywords'} />
+      <meta content={formatMessage({ id: 'title' })} name={'apple-mobile-web-app-title'} />
+      <meta content={formatMessage({ id: 'title' })} name={'application-name'} />
+      <meta content={formatMessage({ id: 'title' })} name={'twitter:title'} />
+      <meta content={formatMessage({ id: 'title' })} property={'og:site_name'} />
+      <meta content={formatMessage({ id: 'title' })} property={'og:title'} />
       <meta content={language} property={'og:locale'} />
-      <title>{title}</title>
+      <title>{formatMessage({ id: 'title' })}</title>
       {generateAndroidChrome([36, 48, 72, 96, 144, 192, 256, 384, 512])}
       {generateAppleTouch([57, 60, 72, 76, 114, 120, 144, 152, 180])}
       {generateFavicon([16, 32])}
