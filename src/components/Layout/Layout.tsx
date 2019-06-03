@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { addLocaleData, IntlProvider } from 'gatsby-plugin-intl';
 import 'intl';
 import 'intl/locale-data/jsonp/en';
 import 'intl/locale-data/jsonp/ru';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import * as React from 'react';
-import { addLocaleData, IntlProvider } from 'react-intl';
 import * as en from 'react-intl/locale-data/en';
 import * as ru from 'react-intl/locale-data/ru';
 
@@ -49,8 +49,10 @@ const Layout: React.FC = (props: any): React.ReactElement => {
   const langsMenu: ILangObject[] = getLangs(langs, langKey, getUrlForLang(homeLink, pathname));
   const i18nMessages: { [key: string]: string } = require(`../../data/messages/${langKey}`);
 
+  console.log(props);
+
   return (
-    <IntlProvider locale={langKey} messages={i18nMessages}>
+    <IntlProvider locale={navigator.language} messages={i18nMessages}>
       <Context.Consumer>
         {(context) => (
           <>
