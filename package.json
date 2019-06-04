@@ -9,7 +9,6 @@
   "dependencies": {
     "gatsby": "^2.8.2",
     "gatsby-image": "^2.1.2",
-    "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-intl": "^0.1.7",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
@@ -22,12 +21,9 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
-    "intl": "^1.2.5",
-    "ptz-i18n": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "react-intl": "^2.9.0"
+    "react-helmet": "^5.2.1"
   },
   "description": "Personal site",
   "devDependencies": {
