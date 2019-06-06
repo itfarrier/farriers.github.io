@@ -50,9 +50,16 @@
     "typescript": "^3.5.1"
   },
   "keywords": [
+    "blacksmith",
+    "farrier",
     "farriers",
+    "horse shoe",
+    "horse shoes",
+    "horse",
     "horses",
+    "horseshoe",
     "horseshoeing",
+    "horseshoes",
     "trimming"
   ],
   "license": "GPL-3.0",

@@ -100,7 +100,7 @@ const Head: (props: any) => React.ReactElement = (props) => {
         content={formatMessage({ id: 'horseshoeingAndTrimming' })}
         property={'og:description'}
       />
-      <meta content={formatMessage({ id: 'keywords' })} name={'keywords'} />
+      <meta content={formatMessage({ id: 'keywords' }).toString()} name={'keywords'} />
       <meta content={formatMessage({ id: 'title' })} name={'apple-mobile-web-app-title'} />
       <meta content={formatMessage({ id: 'title' })} name={'application-name'} />
       <meta content={formatMessage({ id: 'title' })} name={'twitter:title'} />
