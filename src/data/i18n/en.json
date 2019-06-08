@@ -1,21 +1,8 @@
 {
-  "horseshoeingAndTrimming": "horseshoeing and trimming",
-  "keywords": [
-    "blacksmith",
-    "blacksmiths",
-    "farrier",
-    "farriers",
-    "hoof",
-    "hoofs",
-    "horse shoe",
-    "horse shoes",
-    "horse",
-    "horses",
-    "horseshoe",
-    "horseshoeing",
-    "horseshoes",
-    "trimming"
-  ],
+  "dark": "dark",
+  "keywords": "blacksmith blacksmiths farrier farriers hoof hoofs hooves horse horses horseshoe horseshoeing horseshoes krasnoyarsk krai krasnoyarsk siberia trimming",
+  "light": "light",
   "title": "farriers.ru",
+  "trimmingAndHorseshoeing": "trimming and horseshoeing",
   "vjacheslavShtol": "Vjacheslav Shtol'"
 }

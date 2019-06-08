@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import Head from '../Head';
 import Header from '../Header';
 import Main from '../Main';
+import * as styles from './Layout.module.css';
 
 const Layout: React.FC = (props: any): React.ReactElement => {
   const { children, location } = props;
@@ -27,12 +28,12 @@ const Layout: React.FC = (props: any): React.ReactElement => {
   return (
     <Context.Consumer>
       {(context) => (
-        <>
+        <div className={styles.gridContainer}>
           <Head context={context} location={location} />
           <Header context={context} />
           <Main children={children} />
           <Footer />
-        </>
+        </div>
       )}
     </Context.Consumer>
   );

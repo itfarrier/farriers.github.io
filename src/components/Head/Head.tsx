@@ -91,13 +91,13 @@ const Head: (props: any) => React.ReactElement = (props) => {
       <meta content={'yes'} name={'apple-mobile-web-app-capable'} />
       <meta content={href} name={'twitter:url'} />
       <meta content={href} property={'og:url'} />
-      <meta content={formatMessage({ id: 'horseshoeingAndTrimming' })} name={'description'} />
+      <meta content={formatMessage({ id: 'trimmingAndHorseshoeing' })} name={'description'} />
       <meta
-        content={formatMessage({ id: 'horseshoeingAndTrimming' })}
+        content={formatMessage({ id: 'trimmingAndHorseshoeing' })}
         name={'twitter:description'}
       />
       <meta
-        content={formatMessage({ id: 'horseshoeingAndTrimming' })}
+        content={formatMessage({ id: 'trimmingAndHorseshoeing' })}
         property={'og:description'}
       />
       <meta content={formatMessage({ id: 'keywords' }).toString()} name={'keywords'} />

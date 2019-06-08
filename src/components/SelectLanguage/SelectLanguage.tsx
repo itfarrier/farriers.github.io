@@ -1,6 +1,8 @@
 import { IntlContextConsumer } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
+import * as styles from './SelectLanguage.module.css';
+
 const SelectLanguage = (props: any): React.ReactElement => {
   return (
     <IntlContextConsumer>
@@ -14,7 +16,7 @@ const SelectLanguage = (props: any): React.ReactElement => {
             };
 
             return (
-              <button key={language} onClick={onClick}>
+              <button className={styles.button} key={language} onClick={onClick}>
                 {language}
               </button>
             );

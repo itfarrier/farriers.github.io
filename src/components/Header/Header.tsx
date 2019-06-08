@@ -1,25 +1,31 @@
+import { injectIntl } from 'gatsby-plugin-intl';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
 import SelectLanguage from '../SelectLanguage';
+import * as styles from './Header.module.css';
 import { IProps } from './interfaces';
 
 const Header: (props: IProps) => React.ReactElement = (props) => {
   const {
     context: { isDark, toggleDark, toggleLanguage },
+    intl: { formatMessage },
   } = props;
 
-  const theme = isDark ? 'dark' : 'light';
+  const themeName = isDark ? formatMessage({ id: 'dark' }) : formatMessage({ id: 'light' });
+  const themeAttribute = isDark ? 'dark' : 'light';
 
   return (
-    <header>
-      <Helmet htmlAttributes={{ theme }} />
+    <header className={styles.header}>
+      <Helmet htmlAttributes={{ theme: themeAttribute }} />
       <nav>
-        <button onClick={toggleDark}>{theme}</button>
+        <button className={styles.button} onClick={toggleDark}>
+          {themeName}
+        </button>
         <SelectLanguage toggleLanguage={toggleLanguage} />
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default injectIntl(Header);

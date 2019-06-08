@@ -1,0 +1,9 @@
+@import url('../../common.css');
+
+.header {
+}
+
+.button {
+  color: var(--black);
+  transition: var(--transition);
+}

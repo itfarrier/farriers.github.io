@@ -22,7 +22,12 @@ const HTML = (props: IHTML): React.ReactElement => {
         <noscript id={'gatsby-noscript'} key={'noscript'}>
           This app works best with JavaScript enabled.
         </noscript>
-        <div dangerouslySetInnerHTML={{ __html: body }} id={'___gatsby'} key={'body'} />
+        <div
+          dangerouslySetInnerHTML={{ __html: body }}
+          id={'___gatsby'}
+          key={'body'}
+          style={{ height: '100%', width: '100%' }}
+        />
         {postBodyComponents}
       </body>
     </html>

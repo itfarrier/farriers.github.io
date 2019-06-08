@@ -1,1 +1,33 @@
 @import url('../common.css');
+
+.article {
+  text-align: center;
+}
+
+.a {
+  display: block;
+  float: left;
+}
+
+.p {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.span {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  a {
+    height: 100%;
+  }
+}
+
+.svg {
+  width: 2rem;
+  fill: var(--black);
+  transition: var(--transition);
+}
