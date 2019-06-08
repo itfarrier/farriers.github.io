@@ -3,6 +3,7 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 
 import SelectLanguage from '../SelectLanguage';
+import Button from '../Button';
 import * as styles from './Header.module.css';
 import { IProps } from './interfaces';
 
@@ -19,9 +20,7 @@ const Header: (props: IProps) => React.ReactElement = (props) => {
     <header className={styles.header}>
       <Helmet htmlAttributes={{ theme: themeAttribute }} />
       <nav>
-        <button className={styles.button} onClick={toggleDark} role={'button'}>
-          {themeName}
-        </button>
+        <Button onClick={toggleDark} text={themeName} />
         <SelectLanguage toggleLanguage={toggleLanguage} />
       </nav>
     </header>

@@ -1,6 +1,7 @@
 import { injectIntl, IntlContextConsumer } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
+import Button from '../Button';
 import * as styles from './SelectLanguage.module.css';
 
 const SelectLanguage = (props: any): React.ReactElement => {
@@ -18,9 +19,7 @@ const SelectLanguage = (props: any): React.ReactElement => {
             };
 
             return (
-              <button className={styles.button} key={language} onClick={onClick} role={'button'}>
-                {formatMessage({ id: language })}
-              </button>
+              <Button key={language} onClick={onClick} text={formatMessage({ id: language })} />
             );
           },
         );
