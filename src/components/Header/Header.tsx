@@ -19,7 +19,7 @@ const Header: (props: IProps) => React.ReactElement = (props) => {
     <header className={styles.header}>
       <Helmet htmlAttributes={{ theme: themeAttribute }} />
       <nav>
-        <button className={styles.button} onClick={toggleDark}>
+        <button className={styles.button} onClick={toggleDark} role={'button'}>
           {themeName}
         </button>
         <SelectLanguage toggleLanguage={toggleLanguage} />

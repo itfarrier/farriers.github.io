@@ -1,23 +1,25 @@
-import { IntlContextConsumer } from 'gatsby-plugin-intl';
+import { injectIntl, IntlContextConsumer } from 'gatsby-plugin-intl';
 import * as React from 'react';
 
 import * as styles from './SelectLanguage.module.css';
 
 const SelectLanguage = (props: any): React.ReactElement => {
+  const {
+    intl: { formatMessage },
+  } = props;
+
   return (
     <IntlContextConsumer>
       {(context: any): React.ReactElement[] => {
-        const { languages } = context;
-
-        return languages.map(
+        return context.languages.map(
           (language: string): React.ReactElement => {
             const onClick = (): void => {
               return props.toggleLanguage(language);
             };
 
             return (
-              <button className={styles.button} key={language} onClick={onClick}>
-                {language}
+              <button className={styles.button} key={language} onClick={onClick} role={'button'}>
+                {formatMessage({ id: language })}
               </button>
             );
           },
@@ -27,4 +29,4 @@ const SelectLanguage = (props: any): React.ReactElement => {
   );
 };
 
-export default SelectLanguage;
+export default injectIntl(SelectLanguage);

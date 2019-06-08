@@ -15,13 +15,11 @@
 html,
 body,
 #___gatsby,
-#___gatsby > *,
 div[role='group'][tabindex] {
   width: 100%;
   height: 100%;
   background: var(--white);
   color: var(--black);
-  font-size: 2rem;
   transition: var(--transition);
 }
 

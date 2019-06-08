@@ -9,32 +9,18 @@ import Main from '../Main';
 import * as styles from './Layout.module.css';
 
 const Layout: React.FC = (props: any): React.ReactElement => {
-  const { children, location } = props;
-
-  const {
-    site: {
-      siteMetadata: {},
-    },
-  } = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <Context.Consumer>
-      {(context) => (
-        <div className={styles.gridContainer}>
-          <Head context={context} location={location} />
-          <Header context={context} />
-          <Main children={children} />
-          <Footer />
-        </div>
-      )}
+      {(context) => {
+        return (
+          <div className={styles.container}>
+            <Head context={context} location={props.location} />
+            <Header context={context} />
+            <Main children={props.children} />
+            <Footer />
+          </div>
+        );
+      }}
     </Context.Consumer>
   );
 };
