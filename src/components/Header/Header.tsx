@@ -2,8 +2,9 @@ import { injectIntl } from 'gatsby-plugin-intl';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import SelectLanguage from '../SelectLanguage';
 import Button from '../Button';
+import SelectLanguage from '../SelectLanguage';
+import ThemeChanger from '../ThemeChanger';
 import * as styles from './Header.module.css';
 import { IProps } from './interfaces';
 
@@ -20,7 +21,7 @@ const Header: (props: IProps) => React.ReactElement = (props) => {
     <header className={styles.header}>
       <Helmet htmlAttributes={{ theme: themeAttribute }} />
       <nav>
-        <Button onClick={toggleDark} text={themeName} />
+        <ThemeChanger onClick={toggleDark} {...props} />
         <SelectLanguage toggleLanguage={toggleLanguage} />
       </nav>
     </header>
