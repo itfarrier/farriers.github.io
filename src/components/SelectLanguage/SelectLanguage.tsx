@@ -19,7 +19,12 @@ const SelectLanguage = (props: any): React.ReactElement => {
             };
 
             return (
-              <Button key={language} onClick={onClick} text={formatMessage({ id: language })} />
+              <Button
+                className={styles.button}
+                key={language}
+                onClick={onClick}
+                text={formatMessage({ id: language })}
+              />
             );
           },
         );

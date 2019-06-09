@@ -1,18 +1,6 @@
 @import url('../../common.css');
 
 .button {
-  border: 1px solid var(--black);
-  margin: 0.1em 0 0 0.1em;
-  appearance: none;
-  background: var(--white);
-  color: var(--black);
-  cursor: pointer;
-  outline: none;
-  transition: var(--transition);
-}
-
-.button:focus,
-.button:hover {
-  background: var(--black);
-  color: var(--white);
+  min-width: calc(var(--buttonSize) * 1.5);
+  height: var(--buttonSize);
 }
