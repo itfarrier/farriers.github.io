@@ -1,0 +1,36 @@
+@import url('../../common.css');
+
+.themeChanger {
+  --size: 1.5em;
+
+  overflow: hidden;
+  width: var(--size);
+  height: var(--size);
+}
+
+.svg {
+  display: block;
+  width: var(--size);
+  height: calc(var(--size) * 2);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.themeChanger .svg {
+  fill: var(--black);
+  transition: var(--transition);
+}
+
+.themeChanger:focus .svg,
+.themeChanger:hover .svg {
+  fill: var(--white);
+  transition: var(--transition);
+}
+
+.day {
+  transform: rotate(360deg);
+}
+
+.night {
+  transform: rotate(180deg);
+}
