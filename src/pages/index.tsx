@@ -14,14 +14,15 @@ const Index: React.FC = (props) => {
     <Layout location={location}>
       <article className={styles.article}>
         <header>
-          <h1 className={styles.h1}>{formatMessage({ id: 'trimmingAndHorseshoeing' })}</h1>
+          <h1>{formatMessage({ id: 'vjacheslavShtol' })}</h1>
         </header>
         <section>
+          <h2>{formatMessage({ id: 'trimmingAndHorseshoeing' })}</h2>
           <p>
             <span className={styles.span}>
-              {formatMessage({ id: 'vjacheslavShtol' })}
               <a
                 aria-label={'instagram profile'}
+                className={styles.profiles}
                 href={'https://instagram.com/vyacheslavstoll'}
                 role={'link'}
               >
@@ -41,7 +42,12 @@ const Index: React.FC = (props) => {
                   />
                 </svg>
               </a>
-              <a aria-label={'vk profile'} href={'https://vk.com/id102449118'} role={'link'}>
+              <a
+                aria-label={'vk profile'}
+                className={styles.profiles}
+                href={'https://vk.com/id102449118'}
+                role={'link'}
+              >
                 <svg
                   aria-hidden={'true'}
                   className={styles.svg}

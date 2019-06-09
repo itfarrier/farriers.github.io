@@ -1,33 +1,35 @@
 @import url('../common.css');
 
 .article {
+  font-size: calc(2.5vw + 1vh);
   text-align: center;
 }
 
 .a {
   display: block;
+  width: fit-content;
   float: left;
 }
 
 .p {
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
 }
 
 .span {
   display: inline-flex;
-  align-content: center;
-  align-items: center;
   justify-content: center;
   justify-items: center;
+}
 
-  a {
-    height: 100%;
-  }
+.profiles {
+  margin-left: 0.25em;
 }
 
 .svg {
-  width: 2rem;
+  width: 1em;
+  height: 1em;
   fill: var(--black);
   transition: var(--transition);
 }
