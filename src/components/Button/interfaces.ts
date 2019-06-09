@@ -1,8 +1,6 @@
-import Button from '.';
-
 interface IProps {
   text: string;
-  children: React.ReactChildren;
+  children: React.ReactChildren | React.ReactElement;
   className: React.HTMLAttributes<HTMLButtonElement>;
   onClick(): void;
 }
