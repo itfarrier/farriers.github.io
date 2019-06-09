@@ -3,3 +3,7 @@
 .header {
   flex: 1 1 10%;
 }
+
+.nav {
+  display: flex;
+}

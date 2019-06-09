@@ -20,7 +20,7 @@ const Header: (props: IProps) => React.ReactElement = (props) => {
   return (
     <header className={styles.header}>
       <Helmet htmlAttributes={{ theme: themeAttribute }} />
-      <nav>
+      <nav className={styles.nav}>
         <ThemeChanger onClick={toggleDark} {...props} />
         <SelectLanguage toggleLanguage={toggleLanguage} />
       </nav>
